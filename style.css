@@ -256,7 +256,7 @@ header {
   background-color: black;
   color: white;
   border: none;
-
+  cursor: pointer;
   border-radius: 5px;
   margin: 0 auto;
   transition: transform 0.3s ease-in-out, background-color 0.3s;
@@ -265,8 +265,8 @@ header {
 }
 
 .get-started:hover {
-  transform: scale(1.1);
-  background-color: #ff0000;
+
+
 }
 
 .image {
