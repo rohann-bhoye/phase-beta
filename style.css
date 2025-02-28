@@ -66,6 +66,7 @@ header {
 
 .logo-name {
   font-weight: normal;
+  color: red;
 }
 
 /* Mobile Menu Button */
@@ -663,6 +664,7 @@ header {
 
 .footer-name {
   font-weight: normal;
+  color: red;
 }
 
 .footer-top nav ul,
