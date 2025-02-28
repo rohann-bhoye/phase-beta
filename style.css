@@ -65,7 +65,7 @@ header {
 }
 
 .logo-name {
-  font-weight: normal;
+  font-weight: bold;
   color: red;
 }
 
@@ -663,7 +663,7 @@ header {
 }
 
 .footer-name {
-  font-weight: normal;
+  font-weight: bold;
   color: red;
 }
 
