@@ -662,6 +662,7 @@ header {
   font-weight: bold;
   color: #ffffff;
   margin-bottom: 20px;
+  text-decoration: none;
 }
 
 .footer-name {
