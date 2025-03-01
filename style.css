@@ -668,6 +668,7 @@ header {
 .footer-name {
   font-weight: bold;
   color: red;
+  text-decoration: none;
 }
 
 .footer-top nav ul,
