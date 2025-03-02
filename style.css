@@ -121,7 +121,7 @@ header {
 
 .login {
   background-color: transparent;
-  color: black;
+  color: rgb(0, 0, 0);
   border: 1px solid black;
   font-weight: bold;
 }
