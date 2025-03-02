@@ -224,6 +224,15 @@ footer .footer-side a{
   padding: 20px;
 }
 
+.internship-startdate h2 {
+    animation: blink 2s infinite;
+}
+
+@keyframes blink {
+    0% { opacity: 1; }
+    50% { opacity: 0; }
+    100% { opacity: 1; }
+}
 .title {
   text-align: center;
   margin: 30px 0;
