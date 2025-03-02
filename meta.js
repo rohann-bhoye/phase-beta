@@ -21,7 +21,7 @@ function addMetaTags() {
         { name: "twitter:image", content: "https://www.bucketstudy.com/image/background.jpg" }
     ];
 
-
+    // Add meta tags dynamically
     metaTags.forEach(tag => {
         const metaElement = document.createElement("meta");
         Object.keys(tag).forEach(key => {
@@ -33,14 +33,12 @@ function addMetaTags() {
     // Add Favicon dynamically (local favicon)
     const favicon = document.createElement("link");
     favicon.rel = "icon";
-    favicon.src = "image/favicon.ico"; // Make sure "favicon.ico" exists in the "images/" folder
-    favicon.type = "image/x-icon";
+    favicon.href = "image/favicon.ico"; // ✅ Fixed: Use "href" instead of "src"
+    favicon.type = "image/x-icon"; // ✅ Fixed extra spaces
     document.head.appendChild(favicon);
 }
-
 
 // Run functions after the DOM has loaded
 document.addEventListener("DOMContentLoaded", () => {
     addMetaTags();
-
 });
