@@ -224,6 +224,9 @@ footer .footer-side a{
   padding: 20px;
 }
 
+.internship-startdate{
+  text-align:center;
+}
 .internship-startdate h2 {
     animation: blink 2s infinite;
 }
