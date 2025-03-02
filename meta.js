@@ -42,3 +42,17 @@ function addMetaTags() {
 document.addEventListener("DOMContentLoaded", () => {
     addMetaTags();
 });
+document.addEventListener("contextmenu", function(event) {
+    event.preventDefault(); // Disable right-click menu
+});
+
+document.addEventListener("keydown", function(event) {
+    // Disable Ctrl+U, Ctrl+Shift+I, F12
+    if (
+        event.ctrlKey && (event.key === "u" || event.key === "U") || // Ctrl + U
+        event.ctrlKey && event.shiftKey && (event.key === "I" || event.key === "i") || // Ctrl + Shift + I
+        event.key === "F12" // F12
+    ) {
+        event.preventDefault();
+    }
+});
