@@ -33,26 +33,15 @@ function addMetaTags() {
     // Add Favicon dynamically (local favicon)
     const favicon = document.createElement("link");
     favicon.rel = "icon";
-    favicon.href = "images/Favicon.png"; // Make sure "favicon.ico" exists in the "images/" folder
+    favicon.src = "images/Favicon.png"; // Make sure "favicon.ico" exists in the "images/" folder
     favicon.type = "image/x-icon";
     document.head.appendChild(favicon);
 }
-    function addImage() {
-        const img = document.createElement("img");
-        img.src = "image/Favicon.png";  // Make sure this image exists in the "images/" folder
-        img.alt = "Welcome to BucketStudy";
-        img.width = 500; // Set image width
-        img.style.display = "block"; 
-        img.style.margin = "20px auto"; // Center the image
-    
-        // Append the image to the body
-        document.body.appendChild(img);
-    }
-// Function to use local images in background (CSS)
+
 
 // Run functions after the DOM has loaded
 document.addEventListener("DOMContentLoaded", () => {
     addMetaTags();
-    addImage();  // Call function to add image
+
     
 });
