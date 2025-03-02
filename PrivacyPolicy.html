@@ -3,23 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BucketStudy - About Us</title>
-    <link rel="stylesheet" href="PrivacyPolicy.css">
+    <title>BucketStudy - Privacy Policy</title>
+    <link rel="stylesheet" href="privacy-policy.css">
 </head>
 <body>
-
-    <!-- 🔹 Notification Bar -->
+    <!-- Notification Bar -->
     <div class="notification-bar">
         <p>🚀 This is a beta version. We are updating it day by day for better performance!</p>
     </div>
 
-    <!-- 🔹 Header Section -->
+    <!-- Header Section -->
     <header>
         <div class="logo-side">
-
             <a href="index.html"><div class="logo">BUCKET<span class="logo-name">STUDY</span></div></a>
         </div>
-        <nav>
+        <nav class="desktop-nav">
             <ul>
                 <li><a href="index.html">Home</a></li>
                 <li><a href="Aboutus.html">About Us</a></li>
@@ -31,10 +29,25 @@
             <button class="login">Login</button>
             <button class="signup">Sign Up</button>
         </div>
+        <button id="menuToggle" class="menu-toggle">☰</button>
     </header>
 
-    <!-- 🔹 Main Content Section -->
-    <div class="content">
+    <!-- Mobile Menu -->
+    <nav id="mobileMenu" class="mobile-menu">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="Aboutus.html">About Us</a></li>
+            <li><a href="internship.html">Internship - Apply Here</a></li>
+            <li><a href="ContactUs.html">Contact Us</a></li>
+        </ul>
+        <div class="mobile-auth-buttons">
+            <button class="login">Login</button>
+            <button class="signup">Sign Up</button>
+        </div>
+    </nav>
+
+    <!-- Main Content Section -->
+    <main class="content">
         <div class="privacy-container">
             <h1>Privacy Policy</h1>
             <p class="update-date">Last Updated: <span>February 2025</span></p>
@@ -85,44 +98,49 @@
             <p><strong>Email:</strong> <a href="mailto:privacy@buckstudy.com">privacy@buckstudy.com</a></p>
             <p><strong>Website:</strong> <a href="https://buckstudy.com">buckstudy.com</a></p>
         </div>
-    </div>
-    <div class="footer-container">
-        <footer>
+    </main>
+
+    <footer class="footer-container">
+        <div class="footer-top">
             <div class="footer-side">
                 <a href="index.html"><div class="footer-logo">BUCKET<span class="footer-name">STUDY</span></div></a>
             </div>
+            <nav>
                 <ul>
-                    <li ><a href="index.html" class="nav1">Home</a></li>
-                    <li ><a href="Aboutus.html" class="nav1">About Us</a></li>
+                    <li><a href="index.html" class="nav1">Home</a></li>
+                    <li><a href="Aboutus.html" class="nav1">About Us</a></li>
                     <li><a href="internship.html" class="nav1">Internship - Apply Here</a></li>
                     <li><a href="ContactUs.html" class="nav1">Contact Us</a></li>
                 </ul>
             </nav>
-        </footer>
-        <footer>
+        </div>
+        <div class="footer-middle">
             <div class="left-side-footer">
                 <h2 class="contact-us-footer">Contact Us :</h2>
                 <p>Email: RohanBhoye1234@gmail.com</p>
-                <p>Address: Nashik , Maharashtra , India</p>
+                <p>Address: Nashik, Maharashtra, India</p>
             </div>
             <div class="right-side-footer">
-                <input class="footer-email" type="text" placeholder="Email">
+                <input class="footer-email" type="email" placeholder="Email">
                 <button>Subscribe to News</button>
             </div>
-        </footer>
-        <footer>
-            <div class="footer-last">
-                <p>
-                    @2025 BucketStudy.All Rights Reserved.
-                </p>
-                <nav>
+        </div>
+        <div class="footer-last">
+            <p>@2025 BucketStudy. All Rights Reserved.</p>
+            <nav>
                 <ul>
                     <li><a href="PrivacyPolicy.html" class="nav1">Privacy Policy</a></li>
                 </ul>
-                </nav>
+            </nav>
+        </div>
+    </footer>
 
-            </div>
-        </footer>
-    </div>
+    <script>
+        document.getElementById('menuToggle').addEventListener('click', function() {
+            var mobileMenu = document.getElementById('mobileMenu');
+            mobileMenu.classList.toggle('active');
+            this.textContent = mobileMenu.classList.contains('active') ? '✕' : '☰';
+        });
+    </script>
 </body>
 </html>
