@@ -288,6 +288,7 @@ footer .footer-side a{
 .book-btn {
   width: 5rem;
   height: 2rem;
+  margin-top:10px;
   background-color: #c1ff00;
   font-weight: bold;
   border: none;
