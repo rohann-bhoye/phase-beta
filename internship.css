@@ -23,6 +23,9 @@ body {
   z-index: 1000;
 }
 
+footer .footer-side a{
+  text-decoration: none ;
+}
 /* Header */
 header {
   display: flex;
@@ -467,9 +470,7 @@ header {
   .left-side-footer {
     margin-top: 0;
   }
-footer .footer-side a{
-  text-decoration: none ;
-}
+
   .right-side-footer {
     flex-direction: row;
     margin-top: 0;
