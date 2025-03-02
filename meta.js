@@ -33,7 +33,7 @@ function addMetaTags() {
     // Add Favicon dynamically (local favicon)
     const favicon = document.createElement("link");
     favicon.rel = "icon";
-    favicon.src = "images/favicon.ico"; // Make sure "favicon.ico" exists in the "images/" folder
+    favicon.src = "image/favicon.ico"; // Make sure "favicon.ico" exists in the "images/" folder
     favicon.type = "image/x-icon";
     document.head.appendChild(favicon);
 }
@@ -43,5 +43,4 @@ function addMetaTags() {
 document.addEventListener("DOMContentLoaded", () => {
     addMetaTags();
 
-    
 });
