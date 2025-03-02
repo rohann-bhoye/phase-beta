@@ -65,7 +65,7 @@ header {
   text-decoration: none;
 }
 
-.logo-name {
+.logo-name span {
   font-weight: bold;
   color: red;
   text-decoration: none;
