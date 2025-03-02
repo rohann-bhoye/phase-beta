@@ -49,7 +49,9 @@ ul {
     text-decoration: underline;
 }
 
-
+header .logo-side a{
+  text-decoration: none;
+}
 
   
   /* Small Notification Bar */

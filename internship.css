@@ -76,6 +76,9 @@ header {
   font-size: 24px;
   font-weight: bold;
 }
+header .logo-side a{
+  text-decoration: none;
+}
 
 /* Navigation */
 nav ul {
