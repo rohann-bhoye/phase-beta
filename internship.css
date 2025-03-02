@@ -5,11 +5,22 @@
   font-family: Arial, sans-serif;
 }
 
+/* ===== GENERAL STYLES ===== */
 body {
-  line-height: 1.6;
+  min-height: 100vh;
 }
 
-/* Notification Bar */
+.desktop-only {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .desktop-only {
+    display: inline;
+  }
+}
+
+/* ===== NOTIFICATION BAR ===== */
 .notification-bar {
   background-color: #c1ff00;
   color: #333;
@@ -21,12 +32,12 @@ body {
   top: 0;
   width: 100%;
   z-index: 1000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-footer .footer-side a{
-  text-decoration: none ;
-}
-/* Header */
+/* ===== HEADER ===== */
 header {
   display: flex;
   justify-content: space-between;
@@ -35,22 +46,32 @@ header {
   background-color: white;
   border-bottom: 1px solid #ddd;
   margin-top: 30px;
+  animation: fadeIn 1.2s ease-in-out;
 }
 
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Logo */
 .logo {
   font-size: 24px;
   font-weight: bold;
+  text-decoration: none;
 }
 
 .logo-name {
-  font-weight: normal;
-}
-
-.logo-side a {
+  font-weight: bold;
+  color: red;
   text-decoration: none;
-  color: inherit;
 }
 
+/* Mobile Menu Button */
 .menu-toggle {
   display: block;
   background: none;
@@ -59,9 +80,70 @@ header {
   cursor: pointer;
 }
 
-.desktop-nav,
+/* Desktop Navigation */
+.desktop-nav {
+  display: none;
+}
+
+.desktop-nav ul {
+  list-style: none;
+  display: flex;
+}
+
+.desktop-nav ul li {
+  margin: 0 15px;
+}
+
+.desktop-nav ul li a {
+  text-decoration: none;
+  color: #000;
+  transition: color 0.3s ease-in-out;
+}
+
+.desktop-nav ul li a:hover {
+  color: #ff0000;
+}
+
+/* Auth Buttons */
 .auth-buttons {
   display: none;
+}
+
+.auth-buttons button,
+.mobile-auth-buttons button {
+  margin-left: 10px;
+  padding: 8px 15px;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: transform 0.3s ease-in-out, background-color 0.3s;
+}
+
+.login {
+  background-color: transparent;
+  color: black;
+  border: 1px solid black;
+  font-weight: bold;
+}
+
+header .logo-side a{
+  text-decoration: none;
+}
+footer .footer-side a{
+  text-decoration: none ;
+}
+
+.signup {
+  background-color: #c1ff00;
+  color: black;
+  font-weight: bold;
+}
+
+.auth-buttons button:hover,
+.mobile-auth-buttons button:hover {
+  transform: scale(1.1);
+  background-color: #ff0000;
+  color: white;
 }
 
 /* Mobile Menu */
@@ -69,12 +151,12 @@ header {
   display: none;
   background-color: white;
   padding: 20px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   position: absolute;
   top: 80px;
   left: 0;
   width: 100%;
   z-index: 100;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .mobile-menu.active {
@@ -93,12 +175,48 @@ header {
   text-decoration: none;
   color: #000;
   font-size: 18px;
+  transition: color 0.3s ease-in-out;
+}
+
+.mobile-menu ul li a:hover {
+  color: #ff0000;
 }
 
 .mobile-auth-buttons {
   display: flex;
-  justify-content: center;
   margin-top: 20px;
+}
+
+/* ===== UPCOMING FEATURES BANNER ===== */
+.upcoming-container {
+  background: red;
+  color: white;
+  text-align: center;
+  padding: 15px;
+  font-size: 1.2em;
+  font-weight: bold;
+  position: relative;
+  overflow: hidden;
+}
+
+.upcoming-text {
+  display: inline-block;
+  animation: fadeInOut 3s infinite;
+}
+
+@keyframes fadeInOut {
+  0% {
+    opacity: 0.7;
+    transform: translateY(-25px);
+  }
+  50% {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+  100% {
+    opacity: 0.7;
+    transform: translateY(40px);
+  }
 }
 
 /* Main Content */
