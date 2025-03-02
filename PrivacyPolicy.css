@@ -52,6 +52,9 @@ ul {
 header .logo-side a{
   text-decoration: none;
 }
+footer .footer-side a{
+  text-decoration: none ;
+}
 
   
   /* Small Notification Bar */

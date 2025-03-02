@@ -129,6 +129,9 @@ header {
 header .logo-side a{
   text-decoration: none;
 }
+footer .footer-side a{
+  text-decoration: none ;
+}
 
 .signup {
   background-color: #c1ff00;
