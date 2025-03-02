@@ -49,14 +49,10 @@ function addMetaTags() {
         document.body.appendChild(img);
     }
 // Function to use local images in background (CSS)
-function addBackgroundImage() {
-    document.body.style.backgroundImage = "url('image/background.jpg')"; // Change the background image
-    document.body.style.backgroundSize = "cover";
-    document.body.style.backgroundPosition = "center";
-}
+
 // Run functions after the DOM has loaded
 document.addEventListener("DOMContentLoaded", () => {
     addMetaTags();
     addImage();  // Call function to add image
-    addBackgroundImage(); // Call function to add background image
+    
 });
