@@ -18,6 +18,9 @@ body {
   .desktop-only {
     display: inline;
   }
+  .logo-side{
+    margin-top:20px;
+  }
 }
 
 /* ===== NOTIFICATION BAR ===== */
