@@ -18,9 +18,13 @@ body {
   .desktop-only {
     display: inline;
   }
+ 
+}
+@media (max-width: 768px) {
   .logo-side{
     margin-top:20px;
   }
+ 
 }
 
 /* ===== NOTIFICATION BAR ===== */
