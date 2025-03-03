@@ -22,7 +22,10 @@ body {
 }
 @media (max-width: 768px) {
   .logo-side{
-    margin-top:20px;
+    margin-top:10px;
+  }
+  .desktop-nav{
+    margin-top:10px;
   }
  
 }
