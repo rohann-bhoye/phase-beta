@@ -19,6 +19,15 @@ body {
   }
 }
 
+@media (max-width: 768px) {
+  .logo-side{
+    margin-top:15px;
+  }
+  .menu-toggle{
+    margin-top:15px;
+  }
+
+}
 /* ===== NOTIFICATION BAR ===== */
 .notification-bar {
   background-color: #c1ff00;
