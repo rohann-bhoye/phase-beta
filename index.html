@@ -8,6 +8,27 @@
         <script src="meta.js" defer></script>
     </head>
     <body>
+        <div id="loaderOverlay" class="loader-overlay">
+            <div class="loader-container">
+                <div class="loader">
+                    <svg viewBox="0 0 80 80">
+                        <circle id="test" cx="40" cy="40" r="32"></circle>
+                    </svg>
+                </div>
+        
+                <div class="loader triangle">
+                    <svg viewBox="0 0 86 80">
+                        <polygon points="43 8 79 72 7 72"></polygon>
+                    </svg>
+                </div>
+        
+                <div class="loader">
+                    <svg viewBox="0 0 80 80">
+                        <rect x="8" y="8" width="64" height="64"></rect>
+                    </svg>
+                </div>
+            </div>
+        </div>
         <!-- Notification Bar -->
         <div class="notification-bar">
             <p>🚀 This is a beta version. We are updating it day by day for better performance!</p>
@@ -332,6 +353,33 @@
             showNotification('This feature is not available for students yet.');
         });
     });
+    document.addEventListener('DOMContentLoaded', function() {
+    // Show loader
+    const loaderOverlay = document.getElementById('loaderOverlay');
+    
+    // Hide loader when page is fully loaded
+    window.addEventListener('load', function() {
+        setTimeout(function() {
+            loaderOverlay.style.opacity = '0';
+            setTimeout(function() {
+                loaderOverlay.style.display = 'none';
+            }, 500);
+        }, 1000); // Show loader for at least 1 second
+    });
+});document.addEventListener('DOMContentLoaded', function() {
+    // Show loader
+    const loaderOverlay = document.getElementById('loaderOverlay');
+    
+    // Hide loader when page is fully loaded
+    window.addEventListener('load', function() {
+        setTimeout(function() {
+            loaderOverlay.style.opacity = '0';
+            setTimeout(function() {
+                loaderOverlay.style.display = 'none';
+            }, 500);
+        }, 1000); // Show loader for at least 1 second
+    });
+});
         </script>
     </body>
     </html>

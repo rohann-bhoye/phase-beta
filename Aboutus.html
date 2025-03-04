@@ -165,6 +165,32 @@
             mobileMenu.classList.toggle('active');
             this.textContent = mobileMenu.classList.contains('active') ? '✕' : '☰';
         });
+        function showNotification(message) {
+        const notification = document.getElementById('notificationMessage');
+        notification.textContent = message;
+        notification.style.display = 'block';
+        
+        // Hide notification after 3 seconds
+        setTimeout(function() {
+            notification.style.display = 'none';
+        }, 3000);
+    }
+
+    // Add event listeners to all login and signup buttons
+    const loginButtons = document.querySelectorAll('.login');
+    const signupButtons = document.querySelectorAll('.signup');
+
+    loginButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            showNotification('This feature is not available for students yet.');
+        });
+    });
+
+    signupButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            showNotification('This feature is not available for students yet.');
+        });
+    });
         document.addEventListener('DOMContentLoaded', function() {
     // Show loader
     const loaderOverlay = document.getElementById('loaderOverlay');
