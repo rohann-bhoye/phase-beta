@@ -6,13 +6,14 @@
     <title>BucketStudy - About Us</title>
     <link rel="stylesheet" href="styles.css">
     <script src="meta.js" defer></script>
+    <script src="main.js"></script>
 </head>
 <body>
     <!-- Notification Bar -->
     <div class="notification-bar">
         <p>🚀 This is a beta version. We are updating it day by day for better performance!</p>
     </div>
-
+    <div id="notificationMessage" class="notification-message"></div>
     <!-- Header Section -->
     <header>
         <div class="logo-side">
@@ -137,13 +138,5 @@
             </nav>
         </div>
     </footer>
-
-    <script>
-        document.getElementById('menuToggle').addEventListener('click', function() {
-            var mobileMenu = document.getElementById('mobileMenu');
-            mobileMenu.classList.toggle('active');
-            this.textContent = mobileMenu.classList.contains('active') ? '✕' : '☰';
-        });
-    </script>
 </body>
 </html>
