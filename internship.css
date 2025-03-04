@@ -646,3 +646,30 @@ footer .footer-side a{
   }
 }
 
+
+
+/* Notification Message */
+.notification-message {
+    position: fixed;
+    top: 80px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #c1ff00;
+    color: #333;
+    padding: 12px 20px;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 1001;
+    font-weight: bold;
+    text-align: center;
+    max-width: 90%;
+    display: none;
+    animation: fadeInOut 3s ease-in-out;
+}
+
+@keyframes fadeInOut {
+    0% { opacity: 0; }
+    15% { opacity: 1; }
+    85% { opacity: 1; }
+    100% { opacity: 0; }
+}
