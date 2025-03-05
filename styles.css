@@ -228,7 +228,6 @@ footer .footer-side a{
 .content {
     padding: 20px;
     margin-top: 20px;
-    max-width: 100%vw;
 }
 
 .title {
@@ -275,70 +274,7 @@ footer .footer-side a{
 
 
 /* ===== TEAM ===== */
-.team-section {
-  padding: 20px;
-  margin-top: 40px;
-}
 
-.below-banner-container-three {
-  max-width: 550px;
-  margin: 30px auto;
-  padding: 15px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  background-color: white;
-}
-
-.team-container {
-  display: flex;
-  flex-direction: column;
-  gap: 30px;
-  align-items: center;
-  margin-top: 30px;
-}
-
-.team-box {
-  position: relative;
-  max-width: 350px;
-  padding: 24px;
-  background-color: #ffffff;
-  border-radius: 30px;
-  border: 2px solid #000;
-  box-shadow: 0 10px 0 black;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  gap: 15px;
-}
-
-.image1 {
-  width: 100px;
-  height: 100px;
-  border-radius: 50%;
-  border: 1px solid black;
-  object-fit: cover;
-}
-
-.team-post {
-  font-weight: bold;
-  font-size: 14px;
-}
-
-.team-box p {
-  font-size: 14px;
-  line-height: 1.5;
-}
-
-.social-icon {
-  position: absolute;
-  top: 10px;
-  right: 20px;
-  width: 30px;
-  height: 30px;
-  cursor: pointer;
-}
 
 
 
