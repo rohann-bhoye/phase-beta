@@ -310,26 +310,36 @@ footer .footer-side a{
   background-color: #c1ff00;
   display: flex;
   align-items: center;
+  white-space: nowrap;
   position: relative;
-
 }
 
 .banner-wrapper {
   display: flex;
-  width: max-content;
+  width: 200%; /* Ensures a continuous loop */
   animation: marquee 10s linear infinite;
 }
 
 .banner {
   display: flex;
   align-items: center;
-  color: black;
   font-size: 18px;
   font-weight: bold;
-  
-  gap: 1px;
-  padding-right: 50px; /* Adjust for better spacing */
+  color: black;
+  white-space: nowrap;
+  flex-shrink: 0;
+  width: 100%;
 }
+
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
 
 @keyframes marquee {
   from {
