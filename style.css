@@ -325,14 +325,20 @@ footer .footer-side a{
   animation: marquee 10s linear infinite;
 }
 
+.banner::after {
+  content: " • Design • Develop • Discover • Design • Develop • Discover • Design • Develop • Discover • Design • Develop • Discover • Design • Develop • Discover";
+  padding-left: 50px; /* Ensures smooth transition */
+}
+
 @keyframes marquee {
   from {
-    transform: translateX(100%);
+    transform: translateX(0%);
   }
   to {
-    transform: translateX(-100%);
+    transform: translateX(-50%);
   }
 }
+
 
 
 /* ===== FEATURES SECTION ===== */
