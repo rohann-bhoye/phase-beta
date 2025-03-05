@@ -12,15 +12,33 @@
         <div class="loader-container">
             <div class="loader">
                 <svg viewBox="0 0 80 80">
-                    <circle cx="40" cy="40" r="32"></circle>
+                    <circle id="test" cx="40" cy="40" r="32"></circle>
+                </svg>
+            </div>
+    
+            <div class="loader triangle">
+                <svg viewBox="0 0 86 80">
+                    <polygon points="43 8 79 72 7 72"></polygon>
+                </svg>
+            </div>
+    
+            <div class="loader">
+                <svg viewBox="0 0 80 80">
+                    <rect x="8" y="8" width="64" height="64"></rect>
                 </svg>
             </div>
         </div>
     </div>
-    
+    <!-- Notification Bar -->
+    <div class="notification-bar">
+        <p>🚀 This is a beta version. We are updating it day by day for better performance!</p>
+    </div>
+    <div id="notificationMessage" class="notification-message"></div>
+    <!-- Header Section -->
     <header>
         <div class="logo-side">
-            <a href="index.html"><img src="logo.png" class="logo" alt=""></a>
+
+            <a href="index.html"><img src="logo.png" class="logo" alt="" srcset=""></a>
         </div>
         <button id="menuToggle" class="menu-toggle">☰</button>
         <nav class="desktop-nav">
@@ -31,8 +49,27 @@
                 <li><a href="ContactUs.html">Contact Us</a></li>
             </ul>
         </nav>
+        <div class="auth-buttons">
+            <button class="login">Login</button>
+            <button class="signup">Sign Up</button>
+        </div>
     </header>
-    
+
+    <!-- Mobile Menu -->
+    <nav id="mobileMenu" class="mobile-menu">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="Aboutus.html">About Us</a></li>
+            <li><a href="internship.html">Internship - Apply Here</a></li>
+            <li><a href="ContactUs.html">Contact Us</a></li>
+        </ul>
+        <div class="mobile-auth-buttons">
+            <button class="login">Login</button>
+            <button class="signup">Sign Up</button>
+        </div>
+    </nav>
+
+    <!-- Main Content Section -->
     <main class="content">
         <div class="title">
             <h1>ABOUT BUCKETSTUDY</h1>
@@ -73,27 +110,89 @@
             </div>
         </div>
     </main>
-    
+
+    <!-- Footer -->
     <footer class="footer-container">
         <div class="footer-top">
-            <a href="index.html"><div class="footer-logo">BUCKET<span class="footer-name">STUDY</span></div></a>
+            <div class="footer-side">
+                <a href="index.html"><div class="footer-logo">BUCKET<span class="footer-name">STUDY</span></div></a>
+            </div>
             <nav>
                 <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="Aboutus.html">About Us</a></li>
-                    <li><a href="internship.html">Internship - Apply Here</a></li>
-                    <li><a href="ContactUs.html">Contact Us</a></li>
+                    <li><a href="index.html" class="nav1">Home</a></li>
+                    <li><a href="Aboutus.html" class="nav1">About Us</a></li>
+                    <li><a href="internship.html" class="nav1">Internship - Apply Here</a></li>
+                    <li><a href="ContactUs.html" class="nav1">Contact Us</a></li>
+                </ul>
+            </nav>
+        </div>
+        <div class="footer-middle">
+            <div class="left-side-footer">
+                <h2 class="contact-us-footer">Contact Us :</h2>
+                <p>Email: contact@bucketstudy.com</p>
+                <p>Address: Nashik, Maharashtra, India</p>
+            </div>
+            <div class="right-side-footer">
+                <input class="footer-email" type="email" placeholder="Email">
+                <button>Subscribe to News</button>
+            </div>
+        </div>
+        <div class="footer-last">
+            <p>@2025 BucketStudy. All Rights Reserved.</p>
+            <nav>
+                <ul>
+                    <li><a href="PrivacyPolicy.html" class="nav1">Privacy Policy</a></li>
                 </ul>
             </nav>
         </div>
     </footer>
-    
+
     <script>
         document.getElementById('menuToggle').addEventListener('click', function() {
             var mobileMenu = document.getElementById('mobileMenu');
             mobileMenu.classList.toggle('active');
             this.textContent = mobileMenu.classList.contains('active') ? '✕' : '☰';
         });
+        function showNotification(message) {
+        const notification = document.getElementById('notificationMessage');
+        notification.textContent = message;
+        notification.style.display = 'block';
+        
+        // Hide notification after 3 seconds
+        setTimeout(function() {
+            notification.style.display = 'none';
+        }, 3000);
+    }
+
+    // Add event listeners to all login and signup buttons
+    const loginButtons = document.querySelectorAll('.login');
+    const signupButtons = document.querySelectorAll('.signup');
+
+    loginButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            showNotification('This feature is not available for students yet.');
+        });
+    });
+
+    signupButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            showNotification('This feature is not available for students yet.');
+        });
+    });
+        document.addEventListener('DOMContentLoaded', function() {
+    // Show loader
+    const loaderOverlay = document.getElementById('loaderOverlay');
+    
+    // Hide loader when page is fully loaded
+    window.addEventListener('load', function() {
+        setTimeout(function() {
+            loaderOverlay.style.opacity = '0';
+            setTimeout(function() {
+                loaderOverlay.style.display = 'none';
+            }, 500);
+        }, 1000); // Show loader for at least 1 second
+    });
+});
     </script>
 </body>
 </html>
