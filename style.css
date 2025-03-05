@@ -310,37 +310,28 @@ footer .footer-side a{
   background-color: #c1ff00;
   display: flex;
   align-items: center;
-  white-space: nowrap;
-  position: relative;
-}
-
-.banner-wrapper {
-  display: flex;
-  width: 200%; /* Ensures a continuous loop */
-  animation: marquee 10s linear infinite;
 }
 
 .banner {
   display: flex;
   align-items: center;
+  justify-content: center;
+  color: black;
   font-size: 18px;
   font-weight: bold;
-  color: black;
   white-space: nowrap;
-  flex-shrink: 0;
-  width: 100%;
+  width: 200%;
+  animation: marquee 10s linear infinite;
 }
 
 @keyframes marquee {
   from {
-    transform: translateX(0);
+    transform: translateX(100%);
   }
   to {
-    transform: translateX(-50%);
+    transform: translateX(-100%);
   }
 }
-
-
 
 /* ===== FEATURES SECTION ===== */
 .features-section {
