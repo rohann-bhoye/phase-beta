@@ -318,7 +318,7 @@ footer .footer-side a{
   font-size: 18px;
   font-weight: bold;
   white-space: nowrap;
-  animation: marquee 15s linear infinite;
+  animation: marquee 10s linear infinite;
 }
 
 @keyframes marquee {
