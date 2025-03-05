@@ -12,17 +12,7 @@
         <div class="loader-container">
             <div class="loader">
                 <svg viewBox="0 0 80 80">
-                    <circle cx="40" cy="40" r="32"></circle>
-                </svg>
-            </div>
-            <div class="loader triangle">
-                <svg viewBox="0 0 86 80">
-                    <polygon points="43 8 79 72 7 72"></polygon>
-                </svg>
-            </div>
-            <div class="loader">
-                <svg viewBox="0 0 80 80">
-                    <rect x="8" y="8" width="64" height="64"></rect>
+                    <circle id="test" cx="40" cy="40" r="32"></circle>
                 </svg>
             </div>
         </div>
@@ -32,9 +22,7 @@
     <div class="notification-bar">
         <p>🚀 This is a beta version. We are updating it day by day for better performance!</p>
     </div>
-    <div id="notificationMessage" class="notification-message"></div>
 
-    <!-- Header Section -->
     <header>
         <div class="logo-side">
             <a href="index.html"><img src="logo.png" class="logo" alt="BucketStudy Logo"></a>
@@ -44,14 +32,10 @@
             <ul>
                 <li><a href="index.html">Home</a></li>
                 <li><a href="Aboutus.html">About Us</a></li>
-                <li><a href="internship.html">Internship - Apply Here</a></li>
+                <li><a href="internship.html">Internships</a></li>
                 <li><a href="ContactUs.html">Contact Us</a></li>
             </ul>
         </nav>
-        <div class="auth-buttons">
-            <button class="login">Login</button>
-            <button class="signup">Sign Up</button>
-        </div>
     </header>
 
     <!-- Mobile Menu -->
@@ -59,13 +43,9 @@
         <ul>
             <li><a href="index.html">Home</a></li>
             <li><a href="Aboutus.html">About Us</a></li>
-            <li><a href="internship.html">Internship - Apply Here</a></li>
+            <li><a href="internship.html">Internships</a></li>
             <li><a href="ContactUs.html">Contact Us</a></li>
         </ul>
-        <div class="mobile-auth-buttons">
-            <button class="login">Login</button>
-            <button class="signup">Sign Up</button>
-        </div>
     </nav>
 
     <!-- Main Content Section -->
@@ -138,7 +118,7 @@
                 <ul>
                     <li><a href="index.html" class="nav1">Home</a></li>
                     <li><a href="Aboutus.html" class="nav1">About Us</a></li>
-                    <li><a href="internship.html" class="nav1">Internship - Apply Here</a></li>
+                    <li><a href="internship.html" class="nav1">Internships</a></li>
                     <li><a href="ContactUs.html" class="nav1">Contact Us</a></li>
                 </ul>
             </nav>
@@ -146,7 +126,7 @@
         <div class="footer-middle">
             <div class="left-side-footer">
                 <h2 class="contact-us-footer">Contact Us :</h2>
-                <p>Email: contact@bucketstudy.com</p>
+                <p>Email: <a href="mailto:contact@bucketstudy.com">contact@bucketstudy.com</a></p>
                 <p>Address: Nashik, Maharashtra, India</p>
             </div>
             <div class="right-side-footer">
@@ -169,6 +149,35 @@
             var mobileMenu = document.getElementById('mobileMenu');
             mobileMenu.classList.toggle('active');
             this.textContent = mobileMenu.classList.contains('active') ? '✕' : '☰';
+        });
+
+        function showNotification(message) {
+            const notification = document.getElementById('notificationMessage');
+            notification.textContent = message;
+            notification.style.display = 'block';
+            
+            setTimeout(function() {
+                notification.style.display = 'none';
+            }, 3000);
+        }
+
+        document.querySelectorAll('.login, .signup').forEach(button => {
+            button.addEventListener('click', function() {
+                showNotification('This feature is not available for students yet.');
+            });
+        });
+
+        document.addEventListener('DOMContentLoaded', function() {
+            const loaderOverlay = document.getElementById('loaderOverlay');
+            
+            window.addEventListener('load', function() {
+                setTimeout(function() {
+                    loaderOverlay.style.opacity = '0';
+                    setTimeout(function() {
+                        loaderOverlay.style.display = 'none';
+                    }, 500);
+                }, 1000);
+            });
         });
     </script>
 </body>
