@@ -321,12 +321,12 @@ footer .footer-side a{
   font-weight: bold;
   white-space: nowrap;
   width: 200%;
-  animation: marquee 5s linear infinite;
+  animation: marquee 10s linear infinite;
 }
 
 @keyframes marquee {
   from {
-    transform: translateX(100%);
+    transform: translateX(-150%);
   }
   to {
     transform: translateX(-150%);
