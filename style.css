@@ -326,7 +326,7 @@ footer .footer-side a{
 
 @keyframes marquee {
   from {
-    transform: translateX(-150%);
+    transform: translateX(150%);
   }
   to {
     transform: translateX(-150%);
