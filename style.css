@@ -320,7 +320,7 @@ footer .footer-side a{
   color: black;
   font-size: 18px;
   font-weight: bold;
-  white-space: nowrap;
+ 
   animation: marquee 10s linear infinite;
 }
 
