@@ -316,7 +316,7 @@ footer .footer-side a{
 
 .banner-wrapper {
   display: flex;
-  width: 210%; /* Ensures a continuous loop */
+  width: 200%; /* Ensures a continuous loop */
   animation: marquee 10s linear infinite;
 }
 
