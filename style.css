@@ -310,15 +310,24 @@ footer .footer-side a{
   background-color: #c1ff00;
   display: flex;
   align-items: center;
+  position: relative;
+  white-space: nowrap;
+}
+
+.banner-wrapper {
+  display: flex;
+  width: max-content;
+  animation: marquee 10s linear infinite;
 }
 
 .banner {
-  display: inline-block;
+  display: flex;
+  align-items: center;
   color: black;
   font-size: 18px;
   font-weight: bold;
   white-space: nowrap;
-  animation: marquee 10s linear infinite;
+  padding-right: 50px; /* Adjust for better spacing */
 }
 
 @keyframes marquee {
@@ -329,6 +338,7 @@ footer .footer-side a{
     transform: translateX(-50%);
   }
 }
+
 
 /* ===== FEATURES SECTION ===== */
 .features-section {
