@@ -310,7 +310,10 @@ footer .footer-side a{
   background-color: #c1ff00;
   display: flex;
   align-items: center;
+  position: relative;
+  white-space: nowrap;
 }
+
 
 .banner {
   display: inline-block;
