@@ -341,16 +341,6 @@ footer .footer-side a{
 }
 
 
-@keyframes marquee {
-  from {
-    transform: translateX(0);
-  }
-  to {
-    transform: translateX(-50%);
-  }
-}
-
-
 /* ===== FEATURES SECTION ===== */
 .features-section {
   padding: 20px;
