@@ -313,23 +313,20 @@ footer .footer-side a{
 }
 
 .banner {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  display: inline-block;
   color: black;
   font-size: 18px;
   font-weight: bold;
   white-space: nowrap;
-  width: 200%;
   animation: marquee 15s linear infinite;
 }
 
 @keyframes marquee {
   from {
-    transform: translateX(100%);
+    transform: translateX(0);
   }
   to {
-    transform: translateX(-100%);
+    transform: translateX(-50%);
   }
 }
 
