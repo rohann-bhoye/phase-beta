@@ -303,6 +303,7 @@ footer .footer-side a{
 }
 
 /* ===== BANNER ===== */
+
 .banner-container {
   width: 100%;
   height: 80px;
@@ -314,12 +315,6 @@ footer .footer-side a{
   position: relative;
 }
 
-.banner-wrapper {
-  display: flex;
-  width: 200%; /* Ensures a continuous loop */
-  animation: marquee 10s linear infinite;
-}
-
 .banner {
   display: flex;
   align-items: center;
@@ -327,8 +322,7 @@ footer .footer-side a{
   font-weight: bold;
   color: black;
   white-space: nowrap;
-  flex-shrink: 0;
-  width: 100%;
+  animation: marquee 10s linear infinite;
 }
 
 @keyframes marquee {
@@ -339,7 +333,6 @@ footer .footer-side a{
     transform: translateX(-50%);
   }
 }
-
 
 /* ===== FEATURES SECTION ===== */
 .features-section {
