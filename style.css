@@ -326,7 +326,7 @@ footer .footer-side a{
   color: black;
   font-size: 18px;
   font-weight: bold;
-  white-space: nowrap;
+  
   gap: 1px;
   padding-right: 50px; /* Adjust for better spacing */
 }
