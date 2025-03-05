@@ -241,7 +241,7 @@ footer .footer-side a{
   margin-top:-20px;
 }
 .internship-startdate h2 {
-    animation: blink 5s infinite;
+    animation: blink 4s infinite;
 }
 
 @keyframes blink {
