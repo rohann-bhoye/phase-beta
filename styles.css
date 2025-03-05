@@ -68,10 +68,10 @@ header {
 
 /* Logo */
 .logo {
-  font-size: 24px;
-  font-weight: bold;
+ width:120px;
+ height:40px;
+  
 }
-
 .logo-name {
   font-weight: bold;
   color: red;
