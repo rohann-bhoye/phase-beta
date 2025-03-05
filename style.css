@@ -70,9 +70,8 @@ header {
 
 /* Logo */
 .logo {
-  font-size: 24px;
-  font-weight: bold;
-  text-decoration: none;
+ width:250px;
+ height:80px;
   
 }
 
