@@ -326,8 +326,7 @@ footer .footer-side a{
 }
 
 .banner::after {
-  content: " • Design • Develop • Discover • Design • Develop • Discover • Design • Develop • Discover • Design • Develop • Discover • Design • Develop • Discover";
-  padding-left: 50px; /* Ensures smooth transition */
+  content: attr(data-text); /* Duplicates the text dynamically */
 }
 
 @keyframes marquee {
@@ -338,6 +337,7 @@ footer .footer-side a{
     transform: translateX(-50%);
   }
 }
+
 
 
 
