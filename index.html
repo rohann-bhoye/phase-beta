@@ -504,10 +504,13 @@
        document.addEventListener('DOMContentLoaded', function() {
         // Get all learn more buttons
         const learnButtons = [
-          document.querySelector('.learn-btn1'),
           document.querySelector('.learn-btn2'),
           document.querySelector('.learn-btn3'),
           document.querySelector('.learn-btn4')
+        ];
+        const learnButtonss = [
+          document.querySelector('.learn-btn1')
+         
         ];
 
         // Get all feature boxes
@@ -529,7 +532,7 @@
         });
 
         // Make each feature box clickable and link to internship.html
-        featureBoxes.forEach((box) => {
+        featureBoxess.forEach((box) => {
           if (box) {
             box.style.cursor = 'pointer';
             box.addEventListener('click', function() {
