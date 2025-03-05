@@ -276,7 +276,7 @@ footer .footer-side a{
   color: white;
   border: none;
   cursor: pointer;
-  border-radius: 5px;
+  border-radius: 8px;
   margin: 0 auto;
   transition: transform 0.3s ease-in-out, background-color 0.3s;
   max-width: 200px; /* Add this line */
