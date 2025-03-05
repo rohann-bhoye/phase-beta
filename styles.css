@@ -162,7 +162,7 @@ footer .footer-side a{
   top: 80px;
   left: 0;
   width: 100%;
-  z-index: 600;
+  z-index: 100;
 }
 
 .mobile-menu.active {
@@ -228,6 +228,7 @@ footer .footer-side a{
 .content {
     padding: 20px;
     margin-top: 20px;
+    max-width:1240px;
 }
 
 .title {
