@@ -323,6 +323,7 @@ footer .footer-side a{
   white-space: nowrap;
   position: absolute;
   animation: marquee 10s linear infinite;
+  margin-left: 2px;
 }
 
 .banner::after {
