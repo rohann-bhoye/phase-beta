@@ -56,152 +56,151 @@ body {
 
 
 header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 15px 20px;
-  background-color: white;
-  border-bottom: 1px solid #ddd;
-  margin-top: 30px;
-  animation: fadeIn 1.2s ease-in-out;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    background-color: white;
+    border-bottom: 1px solid #ddd;
+    margin-top: 30px;
+    animation: fadeIn 1.2s ease-in-out;
 }
 
 @keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
 }
 
 /* Logo */
 .logo {
- width:120px;
- height:40px;
-  
+    width: 120px;
+    height: 40px;
 }
 
 .logo-name {
-  font-weight: bold;
-  color: red;
-  text-decoration: none;
+    font-weight: bold;
+    color: red;
+    text-decoration: none;
 }
 
 /* Mobile Menu Button */
 .menu-toggle {
-  display: block;
-  background: none;
-  border: none;
-  font-size: 24px;
-  cursor: pointer;
+    display: block;
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
 }
 
 /* Desktop Navigation */
 .desktop-nav {
-  display: none;
+    display: none;
 }
 
 .desktop-nav ul {
-  list-style: none;
-  display: flex;
+    list-style: none;
+    display: flex;
 }
 
 .desktop-nav ul li {
-  margin: 0 15px;
+    margin: 0 15px;
 }
 
 .desktop-nav ul li a {
-  text-decoration: none;
-  color: #000;
-  transition: color 0.3s ease-in-out;
+    text-decoration: none;
+    color: #000;
+    transition: color 0.3s ease-in-out;
 }
 
 .desktop-nav ul li a:hover {
-  color: #ff0000;
+    color: #ff0000;
 }
 
 /* Auth Buttons */
 .auth-buttons {
-  display: none;
+    display: none;
 }
 
 .auth-buttons button,
 .mobile-auth-buttons button {
-  margin-left: 10px;
-  padding: 8px 15px;
-  border: none;
-  cursor: pointer;
-  border-radius: 5px;
-  transition: transform 0.3s ease-in-out, background-color 0.3s;
+    margin-left: 10px;
+    padding: 8px 15px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: transform 0.3s ease-in-out, background-color 0.3s;
 }
 
 .login {
-  background-color: transparent;
-  color: rgb(0, 0, 0);
-  border: 1px solid black;
-  font-weight: bold;
+    background-color: transparent;
+    color: rgb(0, 0, 0);
+    border: 1px solid black;
+    font-weight: bold;
 }
 
 header .logo-side a{
-  text-decoration: none;
+    text-decoration: none;
 }
 footer .footer-side a{
-  text-decoration: none ;
+    text-decoration: none;
 }
 
 .signup {
-  background-color: #c1ff00;
-  color: black;
-  font-weight: bold;
+    background-color: #c1ff00;
+    color: black;
+    font-weight: bold;
 }
 
 .auth-buttons button:hover,
 .mobile-auth-buttons button:hover {
-  transform: scale(1.1);
-  background-color: #ff0000;
-  color: white;
+    transform: scale(1.1);
+    background-color: #ff0000;
+    color: white;
 }
 
 /* Mobile Menu */
 .mobile-menu {
-  display: none;
-  background-color: white;
-  padding: 20px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  position: absolute;
-  top: 100px;
-  left: 0;
-  width: 100%;
-  z-index: 100;
+    display: none;
+    background-color: white;
+    padding: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    position: absolute;
+    top: 100px;
+    left: 0;
+    width: 100%;
+    z-index: 100;
 }
 
 .mobile-menu.active {
-  display: block;
+    display: block;
 }
 
 .mobile-menu ul {
-  list-style: none;
+    list-style: none;
 }
 
 .mobile-menu ul li {
-  margin-bottom: 15px;
+    margin-bottom: 15px;
 }
 
 .mobile-menu ul li a {
-  text-decoration: none;
-  color: #000;
-  font-size: 18px;
-  transition: color 0.3s ease-in-out;
+    text-decoration: none;
+    color: #000;
+    font-size: 18px;
+    transition: color 0.3s ease-in-out;
 }
 
 .mobile-menu ul li a:hover {
-  color: #ff0000;
+    color: #ff0000;
 }
 
 .mobile-auth-buttons {
-  display: flex;
-  margin-top: 20px;
+    display: flex;
+    margin-top: 20px;
 }
 
 /* challage menu */
