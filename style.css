@@ -49,12 +49,6 @@ body {
 
 /* ===== HEADER ===== */
 
-
-
-
-
-
-
 header {
     display: flex;
     justify-content: space-between;
@@ -185,6 +179,8 @@ footer .footer-side a{
 
 .mobile-menu ul li {
     margin-bottom: 15px;
+    display: flex;
+    align-items: center;
 }
 
 .mobile-menu ul li a {
@@ -203,27 +199,21 @@ footer .footer-side a{
     margin-top: 20px;
 }
 
-/* challage menu */
-
+/* Challenge Menu Styling */
 .challenge-menu {
-        position: relative;
-    }
-    .coming-soon {
-        font-size: 12px;
-        font-weight: bold;
-        color: #ff0000;
-        position: absolute;
-        top: 100%;
-        left: 50%;
-        transform: translateX(-50%);
-        white-space: nowrap;
-        animation: blink 1s infinite alternate;
-    }
-    @keyframes blink {
-        0% { opacity: 1; }
-        100% { opacity: 0; }
-    }
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
 
+.coming-soon {
+    background-color: red;
+    color: white;
+    font-size: 12px;
+    font-weight: bold;
+    padding: 3px 8px;
+    border-radius: 5px;
+}
 
 
 
