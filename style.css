@@ -210,7 +210,8 @@ footer .footer-side a{
         position: relative;
     }
     .coming-soon {
-        font-size: 19px;
+        font-size: 12px;
+        font-weight: bold;
         color: #ff0000;
         position: absolute;
         top: 100%;
