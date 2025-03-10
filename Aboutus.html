@@ -44,15 +44,27 @@
           ><img src="logo.png" class="logo" alt="" srcset=""
         /></a>
       </div>
-      <button id="menuToggle" class="menu-toggle">☰</button>
+
+      <!-- Mobile Menu Button -->
+      <button class="menu-toggle" id="menuToggle">
+        <span class="menu-icon">☰</span>
+      </button>
+
+      <!-- Desktop Navigation -->
       <nav class="desktop-nav">
         <ul>
           <li><a href="index.html">Home</a></li>
           <li><a href="Aboutus.html">About Us</a></li>
           <li><a href="internship.html">Internship - Apply Here</a></li>
+          <li class="challenge-menu">
+            <a href="Challages.html">Challenges</a>
+            <span class="coming-soon">Coming Soon</span>
+        </li>
           <li><a href="ContactUs.html">Contact Us</a></li>
         </ul>
       </nav>
+
+      <!-- Desktop Auth Buttons -->
       <div class="auth-buttons">
         <button class="login">Login</button>
         <button class="signup">Sign Up</button>
@@ -60,18 +72,24 @@
     </header>
 
     <!-- Mobile Menu -->
-    <nav id="mobileMenu" class="mobile-menu">
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="Aboutus.html">About Us</a></li>
-        <li><a href="internship.html">Internship - Apply Here</a></li>
-        <li><a href="ContactUs.html">Contact Us</a></li>
-      </ul>
+    <div class="mobile-menu" id="mobileMenu">
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="Aboutus.html">About Us</a></li>
+          <li><a href="internship.html">Internship - Apply Here</a></li>
+          <li class="challenge-menu">
+            <a href="Challages.html">Challenges</a>
+            <span class="coming-soon">Coming Soon</span>
+        </li>
+          <li><a href="ContactUs.html">Contact Us</a></li>
+        </ul>
+      </nav>
       <div class="mobile-auth-buttons">
         <button class="login">Login</button>
         <button class="signup">Sign Up</button>
       </div>
-    </nav>
+    </div>
 
     <!-- Main Content Section -->
     <main class="content">
