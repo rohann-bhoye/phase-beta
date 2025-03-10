@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Challenges - Coming Soon</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            height: 100vh;
+            margin: 0;
+            background: linear-gradient(45deg, #c1ff00, #ff5733);
+            color: white;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            animation: backgroundAnimation 5s infinite alternate;
+        }
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+        .title {
+            font-size: 4.5em;
+            font-weight: bold;
+            text-transform: uppercase;
+            animation: fadeIn 2s ease-in-out, pulse 2s infinite alternate;
+        }
+        .subtitle {
+            font-size: 1.5em;
+            margin-top: 10px;
+            opacity: 0.8;
+            animation: slideUp 2s ease-in-out, blink 1.5s infinite;
+        }
+        .home-btn {
+            margin-top: 40px;
+            padding: 15px 30px;
+            background: #ff5733;
+            color: white;
+            border: none;
+            border-radius: 10px;
+            font-size: 1.2em;
+            font-weight: bold;
+            cursor: pointer;
+            text-decoration: none;
+            transition: transform 0.3s ease-in-out, background 0.3s;
+            animation: fadeIn 3s ease-in-out, bounce 2s infinite;
+            text-align: center;
+        }
+        .home-btn:hover {
+            background: #c1ff00;
+            color: #333;
+            transform: scale(1.1);
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        @keyframes slideUp {
+            from { transform: translateY(20px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+        @keyframes pulse {
+            from { transform: scale(1); }
+            to { transform: scale(1.1); }
+        }
+        @keyframes blink {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
+        }
+        @keyframes backgroundAnimation {
+            from { background: linear-gradient(45deg, #c1ff00, #ff5733); }
+            to { background: linear-gradient(45deg, #ff5733, #c1ff00); }
+        }
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="title">Challenges</div>
+        <div class="subtitle">Coming Soon... Stay Tuned!</div>
+        <a href="index.html" class="home-btn">Go to Home</a>
+    </div>
+</body>
+</html>
