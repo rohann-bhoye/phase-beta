@@ -3,91 +3,1013 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Challenges - Coming Soon</title>
+    <title>BucketStudy - Competition & Challenges</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
-        body {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-direction: column;
-            height: 100vh;
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+        
+        * {
             margin: 0;
-            background: linear-gradient(45deg, #c1ff00, #ff5733);
-            color: white;
-            font-family: Arial, sans-serif;
-            text-align: center;
-            animation: backgroundAnimation 5s infinite alternate;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
         }
+
+        :root {
+            --primary-gradient: linear-gradient(135deg, #6366f1, #8b5cf6, #d946ef);
+            --secondary-gradient: linear-gradient(135deg, #3b82f6, #06b6d4);
+            --bg-gradient: linear-gradient(135deg, #0f0f0f 0%, #121212 50%, #1a1a1a 100%);
+            --card-bg: rgba(30, 30, 30, 0.6);
+            --text-primary: #f8fafc;
+            --text-secondary: #cbd5e1;
+            --accent: #d946ef;
+            --accent-secondary: #8b5cf6;
+        }
+
+        body {
+            background: var(--bg-gradient);
+            color: var(--text-primary);
+            line-height: 1.6;
+            overflow-x: hidden;
+            min-height: 100vh;
+        }
+
         .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 3rem;
+            padding-top: 2rem;
+            position: relative;
+        }
+
+        .logo {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+            background: var(--primary-gradient);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            display: inline-block;
+            letter-spacing: 1px;
+            position: relative;
+        }
+
+        .logo::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 50px;
+            height: 3px;
+            background: var(--primary-gradient);
+            border-radius: 10px;
+        }
+
+        .event-title {
+            font-size: 3.5rem;
+            margin: 1.5rem 0;
+            background: var(--secondary-gradient);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            display: inline-block;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .subtitle {
+            font-size: 1.2rem;
+            color: var(--text-secondary);
+            max-width: 800px;
+            margin: 0 auto;
+            line-height: 1.8;
+        }
+
+        .card {
+            background: var(--card-bg);
+            border-radius: 20px;
+            padding: 2.5rem;
+            margin-bottom: 2.5rem;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        .card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: var(--primary-gradient);
+        }
+
+        h2 {
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            color: var(--accent);
+            position: relative;
+            display: inline-block;
+        }
+
+        h2::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 40px;
+            height: 3px;
+            background: var(--accent-secondary);
+            border-radius: 10px;
+        }
+
+        ul {
+            list-style-type: none;
+            margin-bottom: 1.5rem;
+            padding-left: 0.5rem;
+        }
+
+        li {
+            margin-bottom: 0.8rem;
+            position: relative;
+            padding-left: 1.5rem;
+        }
+
+        li::before {
+            content: '▹';
+            position: absolute;
+            left: 0;
+            color: var(--accent);
+        }
+
+        .highlight {
+            color: #d946ef;
+            font-weight: 600;
+        }
+
+        .btn {
+            display: inline-block;
+            background: var(--primary-gradient);
+            color: white;
+            padding: 1rem 2.5rem;
+            border-radius: 50px;
+            font-weight: 600;
+            text-decoration: none;
+            margin-top: 1.5rem;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+            font-size: 1rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            box-shadow: 0 5px 15px rgba(107, 102, 255, 0.4);
+        }
+
+        .btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 0%;
+            height: 100%;
+            background: var(--secondary-gradient);
+            transition: all 0.5s ease;
+            z-index: -1;
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(107, 102, 255, 0.6);
+        }
+
+        .btn:hover::before {
+            width: 100%;
+        }
+
+        .prize-card {
+            background: linear-gradient(135deg, rgba(107, 102, 255, 0.1), rgba(217, 70, 239, 0.1));
+            border-radius: 15px;
+            padding: 2rem;
+            margin-bottom: 1.5rem;
+            border: 1px solid rgba(107, 102, 255, 0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .prize-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(107, 102, 255, 0.2);
+        }
+
+        .prize-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 5px;
+            height: 100%;
+            background: var(--primary-gradient);
+        }
+
+        .prize-title {
+            font-size: 1.6rem;
+            color: #d946ef;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+        }
+
+        .prize-title i {
+            margin-right: 10px;
+            font-size: 1.8rem;
+        }
+
+        footer {
+            text-align: center;
+            padding: 3rem 0;
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            position: relative;
+        }
+
+        .footer-content {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            margin: 1.5rem 0;
+        }
+
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.1);
+            color: var(--text-primary);
+            margin: 0 10px;
+            transition: all 0.3s ease;
+        }
+
+        .social-links a:hover {
+            background: var(--primary-gradient);
+            transform: translateY(-3px);
+        }
+
+        .timeline {
+            display: flex;
+            justify-content: space-between;
+            margin: 3rem 0;
+            position: relative;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            top: 20px;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: var(--primary-gradient);
+            border-radius: 10px;
+        }
+
+        .timeline-item {
+            position: relative;
+            text-align: center;
+            z-index: 1;
+            flex: 1;
+        }
+
+        .timeline-dot {
+            width: 40px;
+            height: 40px;
+            background: var(--primary-gradient);
+            border-radius: 50%;
+            margin: 0 auto 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.2rem;
+            box-shadow: 0 5px 15px rgba(107, 102, 255, 0.4);
+        }
+
+        .timeline-text {
+            font-size: 1rem;
+            max-width: 120px;
+            margin: 0 auto;
+            font-weight: 500;
+        }
+
+        .floating-particles {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .tech-stack {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-top: 1.5rem;
+        }
+
+        .tech-item {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50px;
+            padding: 0.5rem 1.2rem;
+            font-size: 0.9rem;
+            display: flex;
+            align-items: center;
+            transition: all 0.3s ease;
+        }
+
+        .tech-item:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: translateY(-3px);
+        }
+
+        .tech-item i {
+            margin-right: 8px;
+            font-size: 1.1rem;
+        }
+
+        .faq-item {
+            margin-bottom: 1.5rem;
+        }
+
+        .faq-question {
+            font-size: 1.2rem;
+            font-weight: 600;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 10px;
+            transition: all 0.3s ease;
+        }
+
+        .faq-question:hover {
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        .faq-answer {
+            padding: 0 1rem;
+            max-height: 0;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            opacity: 0;
+        }
+
+        .faq-item.active .faq-answer {
+            padding: 1rem;
+            max-height: 500px;
+            opacity: 1;
+        }
+
+        .faq-item.active .faq-question {
+            background: rgba(255, 255, 255, 0.1);
+            border-bottom-left-radius: 0;
+            border-bottom-right-radius: 0;
+        }
+
+        .faq-toggle {
+            transition: transform 0.3s ease;
+        }
+
+        .faq-item.active .faq-toggle {
+            transform: rotate(180deg);
+        }
+
+        .countdown {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin: 2rem 0;
+        }
+
+        .countdown-item {
             display: flex;
             flex-direction: column;
             align-items: center;
-            justify-content: center;
-            text-align: center;
-        }
-        .title {
-            font-size: 4.5em;
-            font-weight: bold;
-            text-transform: uppercase;
-            animation: fadeIn 2s ease-in-out, pulse 2s infinite alternate;
-        }
-        .subtitle {
-            font-size: 1.5em;
-            margin-top: 10px;
-            opacity: 0.8;
-            animation: slideUp 2s ease-in-out, blink 1.5s infinite;
-        }
-        .home-btn {
-            margin-top: 40px;
-            padding: 15px 30px;
-            background: #ff5733;
-            color: white;
-            border: none;
+            background: rgba(255, 255, 255, 0.05);
+            padding: 1rem;
             border-radius: 10px;
-            font-size: 1.2em;
-            font-weight: bold;
-            cursor: pointer;
-            text-decoration: none;
-            transition: transform 0.3s ease-in-out, background 0.3s;
-            animation: fadeIn 3s ease-in-out, bounce 2s infinite;
+            min-width: 80px;
+        }
+
+        .countdown-number {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--accent);
+        }
+
+        .countdown-label {
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+        }
+
+        .cta-section {
+            text-align: center;
+            margin: 4rem 0;
+        }
+
+        .cta-title {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            background: var(--primary-gradient);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            display: inline-block;
+        }
+
+        .cta-text {
+            max-width: 700px;
+            margin: 0 auto 2rem;
+            font-size: 1.1rem;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 1rem;
+            }
+            
+            .event-title {
+                font-size: 2.2rem;
+            }
+            
+            .subtitle {
+                font-size: 1rem;
+            }
+            
+            .timeline {
+                flex-direction: column;
+                align-items: flex-start;
+                margin-left: 20px;
+            }
+            
+            .timeline::before {
+                top: 0;
+                left: 20px;
+                width: 3px;
+                height: 100%;
+            }
+            
+            .timeline-item {
+                margin-bottom: 30px;
+                text-align: left;
+                padding-left: 50px;
+                width: 100%;
+            }
+            
+            .timeline-dot {
+                position: absolute;
+                left: 0;
+                top: 0;
+                margin: 0;
+            }
+            
+            .timeline-text {
+                margin: 0;
+                max-width: 100%;
+            }
+
+            .tech-stack {
+                justify-content: center;
+            }
+
+            .countdown {
+                flex-wrap: wrap;
+            }
+        }
+
+        .glow {
+            position: absolute;
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(217, 70, 239, 0.2) 0%, rgba(107, 102, 255, 0.1) 40%, rgba(0, 0, 0, 0) 70%);
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        .glow-1 {
+            top: 10%;
+            right: 5%;
+        }
+
+        .glow-2 {
+            bottom: 20%;
+            left: 10%;
+        }
+
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 2rem;
+        }
+
+        .feature-item {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 15px;
+            padding: 1.5rem;
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
             text-align: center;
         }
-        .home-btn:hover {
-            background: #c1ff00;
-            color: #333;
-            transform: scale(1.1);
+
+        .feature-item:hover {
+            background: rgba(255, 255, 255, 0.1);
+            transform: translateY(-5px);
         }
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
+
+        .feature-icon {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            color: var(--accent);
         }
-        @keyframes slideUp {
-            from { transform: translateY(20px); opacity: 0; }
-            to { transform: translateY(0); opacity: 1; }
+
+        .feature-title {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
         }
-        @keyframes pulse {
-            from { transform: scale(1); }
-            to { transform: scale(1.1); }
-        }
-        @keyframes blink {
-            0%, 100% { opacity: 1; }
-            50% { opacity: 0.5; }
-        }
-        @keyframes backgroundAnimation {
-            from { background: linear-gradient(45deg, #c1ff00, #ff5733); }
-            to { background: linear-gradient(45deg, #ff5733, #c1ff00); }
-        }
-        @keyframes bounce {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-10px); }
+
+        .feature-desc {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
         }
     </style>
 </head>
 <body>
+    <div class="floating-particles" id="particles"></div>
+    <div class="glow glow-1"></div>
+    <div class="glow glow-2"></div>
+    
     <div class="container">
-        <div class="title">Challenges</div>
-        <div class="subtitle">Coming Soon... Stay Tuned!</div>
-        <a href="index.html" class="home-btn">Go to Home</a>
+        <header>
+            <div class="logo">BucketStudy</div>
+            <h1 class="event-title">Competition & Challenges</h1>
+            <p class="subtitle">A ReactJS-based project contest crafted to ignite creativity, sharpen problem-solving, and put real-world development skills to the test.</p>
+            
+            <div class="countdown">
+                <div class="countdown-item">
+                    <span class="countdown-number" id="days">00</span>
+                    <span class="countdown-label">Days</span>
+                </div>
+                <div class="countdown-item">
+                    <span class="countdown-number" id="hours">00</span>
+                    <span class="countdown-label">Hours</span>
+                </div>
+                <div class="countdown-item">
+                    <span class="countdown-number" id="minutes">00</span>
+                    <span class="countdown-label">Minutes</span>
+                </div>
+                <div class="countdown-item">
+                    <span class="countdown-number" id="seconds">00</span>
+                    <span class="countdown-label">Seconds</span>
+                </div>
+            </div>
+        </header>
+
+        <div class="card">
+            <h2>Who Can Participate?</h2>
+            <p>Open to all students, regardless of stream or institution. Participate individually or form a team of up to 3 members to maximize your creative potential.</p>
+            
+            <div class="tech-stack">
+                <div class="tech-item"><i class="fab fa-react"></i>ReactJS</div>
+                <div class="tech-item"><i class="fas fa-database"></i>Firebase</div>
+                <div class="tech-item"><i class="fab fa-css3-alt"></i>TailwindCSS</div>
+                <div class="tech-item"><i class="fas fa-code"></i>Judge0 API</div>
+                <div class="tech-item"><i class="fas fa-envelope"></i>EmailJS</div>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2>Project Challenge</h2>
+            <p>After registration, participants will receive a unique theme and will be tasked with creating a coding contest platform with the following features:</p>
+            
+            <div class="feature-grid">
+                <div class="feature-item">
+                    <div class="feature-icon"><i class="fas fa-user-plus"></i></div>
+                    <div class="feature-title">User Authentication</div>
+                    <div class="feature-desc">Implement secure login/signup functionality</div>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon"><i class="fas fa-list"></i></div>
+                    <div class="feature-title">Contest Listings</div>
+                    <div class="feature-desc">Display available coding contests</div>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon"><i class="fas fa-credit-card"></i></div>
+                    <div class="feature-title">Payment Integration</div>
+                    <div class="feature-desc">Support for paid/free participation</div>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon"><i class="fas fa-code"></i></div>
+                    <div class="feature-title">Live Code Editor</div>
+                    <div class="feature-desc">Using Judge0 API for code execution</div>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon"><i class="fas fa-envelope"></i></div>
+                    <div class="feature-title">Email Confirmation</div>
+                    <div class="feature-desc">Optional with EmailJS integration</div>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon"><i class="fas fa-tasks"></i></div>
+                    <div class="feature-title">Submission Tracking</div>
+                    <div class="feature-desc">Monitor and manage code submissions</div>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon"><i class="fas fa-trophy"></i></div>
+                    <div class="feature-title">Leaderboards</div>
+                    <div class="feature-desc">Real-time rankings of participants</div>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon"><i class="fas fa-video"></i></div>
+                    <div class="feature-title">Webcam Monitoring</div>
+                    <div class="feature-desc">Ensure fairness during contests</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2>Technical Requirements</h2>
+            <ul>
+                <li><span class="highlight">Frontend:</span> ReactJS (mandatory)</li>
+                <li><span class="highlight">Backend:</span> Firebase (mandatory) for database, authentication, and storage</li>
+                <li><span class="highlight">Styling:</span> TailwindCSS for all interfaces</li>
+                <li><span class="highlight">AI Tools:</span> Use of ChatGPT and other AI tools is permitted with transparency</li>
+            </ul>
+            <p>No traditional backend required - Firebase will handle all your backend needs!</p>
+        </div>
+
+        <div class="card">
+            <h2>Event Timeline</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-dot"><i class="fas fa-user-plus"></i></div>
+                    <div class="timeline-text">Registration</div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-dot"><i class="fas fa-lightbulb"></i></div>
+                    <div class="timeline-text">Theme Announcement</div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-dot"><i class="fas fa-code"></i></div>
+                    <div class="timeline-text">Development Phase</div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-dot"><i class="fas fa-upload"></i></div>
+                    <div class="timeline-text">Project Submission</div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-dot"><i class="fas fa-laptop-code"></i></div>
+                    <div class="timeline-text">Live Presentation</div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-dot"><i class="fas fa-trophy"></i></div>
+                    <div class="timeline-text">Results & Prizes</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2>Prizes & Recognition</h2>
+            
+            <div class="prize-card">
+                <h3 class="prize-title"><i class="fas fa-trophy"></i>Winner</h3>
+                <p>₹1500 cash prize + a free pass for the next BucketStudy project</p>
+            </div>
+            
+            <div class="prize-card">
+                <h3 class="prize-title"><i class="fas fa-medal"></i>Runner-up</h3>
+                <p>Exclusive BucketStudy T-shirt to showcase your achievement</p>
+            </div>
+            
+            <p>The top teams will also be featured on our platform, giving you recognition in the developer community!</p>
+        </div>
+
+        <div class="card">
+            <h2>Frequently Asked Questions</h2>
+            
+            <div class="faq-item">
+                <div class="faq-question">
+                    How much is the registration fee? <i class="fas fa-chevron-down faq-toggle"></i>
+                </div>
+                <div class="faq-answer">
+                    A nominal fee of ₹150 per team is required to ensure commitment and seriousness toward the project.
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">
+                    Can I participate individually? <i class="fas fa-chevron-down faq-toggle"></i>
+                </div>
+                <div class="faq-answer">
+                    Yes! You can participate either individually or as part of a team with up to 3 members.
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">
+                    Do I need prior experience with ReactJS? <i class="fas fa-chevron-down faq-toggle"></i>
+                </div>
+                <div class="faq-answer">
+                    While prior experience with ReactJS would be beneficial, this contest is also a great opportunity to learn. We recommend at least basic familiarity with JavaScript and React concepts.
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">
+                    How will the projects be evaluated? <i class="fas fa-chevron-down faq-toggle"></i>
+                </div>
+                <div class="faq-answer">
+                    Projects will be evaluated based on functionality, design, code quality, innovation, and how well they meet the requirements. The live presentation will also be a crucial part of the evaluation process.
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">
+                    When will the event dates be announced? <i class="fas fa-chevron-down faq-toggle"></i>
+                </div>
+                <div class="faq-answer">
+                    The exact contest dates will be shared with participants after registration. Make sure to register early to get ample time for preparation!
+                </div>
+            </div>
+        </div>
+
+        <div class="cta-section">
+            <h2 class="cta-title">Ready to Showcase Your Skills?</h2>
+            <p class="cta-text">Let your code speak louder than words — Build it. Present it. Get rewarded.</p>
+            <button class="btn" id="registerBtn">Register Now</button>
+        </div>
     </div>
+
+    <footer>
+        <div class="footer-content">
+            <div class="logo">BucketStudy</div>
+            <p>Empowering students through real-world coding challenges and projects.</p>
+            
+            <div class="social-links">
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                <a href="#"><i class="fab fa-github"></i></a>
+            </div>
+            
+            <p>© 2025 BucketStudy. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Particle animation
+        document.addEventListener('DOMContentLoaded', function() {
+            const canvas = document.createElement('canvas');
+            const ctx = canvas.getContext('2d');
+            const particlesContainer = document.getElementById('particles');
+            
+            particlesContainer.appendChild(canvas);
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+            
+            const particles = [];
+            const particleCount = 70;
+            
+            class Particle {
+                constructor() {
+                    this.x = Math.random() * canvas.width;
+                    this.y = Math.random() * canvas.height;
+                    this.size = Math.random() * 3 + 1;
+                    this.speedX = Math.random() * 1 - 0.5;
+                    this.speedY = Math.random() * 1 - 0.5;
+                    
+                    // Create gradient colors with purple/pink hues
+                    const r = Math.floor(Math.random() * 100 + 150);
+                    const g = Math.floor(Math.random() * 50 + 50);
+                    const b = Math.floor(Math.random() * 150 + 150);
+                    const a = Math.random() * 0.5 + 0.1;
+                    
+                    this.color = `rgba(${r}, ${g}, ${b}, ${a})`;
+                }
+                
+                update() {
+                    this.x += this.speedX;
+                    this.y += this.speedY;
+                    
+                    if (this.x > canvas.width || this.x < 0) {
+                        this.speedX = -this.speedX;
+                    }
+                    
+                    if (this.y > canvas.height || this.y < 0) {
+                        this.speedY = -this.speedY;
+                    }
+                }
+                
+                draw() {
+                    ctx.fillStyle = this.color;
+                    ctx.beginPath();
+                    ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+                    ctx.fill();
+                }
+            }
+            
+            function init() {
+                for (let i = 0; i < particleCount; i++) {
+                    particles.push(new Particle());
+                }
+            }
+            
+            function animate() {
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+                
+                for (let i = 0; i < particles.length; i++) {
+                    particles[i].update();
+                    particles[i].draw();
+                }
+                
+                requestAnimationFrame(animate);
+            }
+            
+            window.addEventListener('resize', function() {
+                canvas.width = window.innerWidth;
+                canvas.height = window.innerHeight;
+            });
+            
+            init();
+            animate();
+        });
+
+        // FAQ Accordion
+        const faqItems = document.querySelectorAll('.faq-item');
+        
+        faqItems.forEach(item => {
+            const question = item.querySelector('.faq-question');
+            
+            question.addEventListener('click', () => {
+                const isActive = item.classList.contains('active');
+                
+                // Close all FAQ items
+                faqItems.forEach(faqItem => {
+                    faqItem.classList.remove('active');
+                });
+                
+                // If the clicked item wasn't active, make it active
+                if (!isActive) {
+                    item.classList.add('active');
+                }
+            });
+        });
+
+        // Countdown Timer
+        function updateCountdown() {
+            // Set the target date (30 days from now for demo purposes)
+            const targetDate = new Date();
+            targetDate.setDate(targetDate.getDate() + 30);
+            
+            const currentDate = new Date();
+            const difference = targetDate - currentDate;
+            
+            const days = Math.floor(difference / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((difference % (1000 * 60)) / 1000);
+            
+            document.getElementById('days').innerText = days.toString().padStart(2, '0');
+            document.getElementById('hours').innerText = hours.toString().padStart(2, '0');
+            document.getElementById('minutes').innerText = minutes.toString().padStart(2, '0');
+            document.getElementById('seconds').innerText = seconds.toString().padStart(2, '0');
+        }
+        
+        // Update countdown every second
+        setInterval(updateCountdown, 1000);
+        updateCountdown();
+
+        // Registration button
+        document.getElementById('registerBtn').addEventListener('click', function() {
+            const modal = document.createElement('div');
+            modal.style.position = 'fixed';
+            modal.style.top = '0';
+            modal.style.left = '0';
+            modal.style.width = '100%';
+            modal.style.height = '100%';
+            modal.style.backgroundColor = 'rgba(0, 0, 0, 0.8)';
+            modal.style.display = 'flex';
+            modal.style.alignItems = 'center';
+            modal.style.justifyContent = 'center';
+            modal.style.zIndex = '1000';
+            
+            const modalContent = document.createElement('div');
+            modalContent.style.backgroundColor = '#1a1a1a';
+            modalContent.style.padding = '2rem';
+            modalContent.style.borderRadius = '15px';
+            modalContent.style.maxWidth = '500px';
+            modalContent.style.width = '90%';
+            modalContent.style.textAlign = 'center';
+            modalContent.style.position = 'relative';
+            modalContent.style.border = '1px solid rgba(255, 255, 255, 0.1)';
+            
+            const closeBtn = document.createElement('button');
+            closeBtn.innerHTML = '&times;';
+            closeBtn.style.position = 'absolute';
+            closeBtn.style.top = '10px';
+            closeBtn.style.right = '15px';
+            closeBtn.style.background = 'none';
+            closeBtn.style.border = 'none';
+            closeBtn.style.color = 'white';
+            closeBtn.style.fontSize = '1.5rem';
+            closeBtn.style.cursor = 'pointer';
+            
+            const title = document.createElement('h2');
+            title.innerText = 'Register for Competition & Challenges';
+            title.style.marginBottom = '1.5rem';
+            title.style.color = '#d946ef';
+            
+            const form = document.createElement('form');
+            form.innerHTML = `
+                <div style="margin-bottom: 1rem; text-align: left;">
+                    <label style="display: block; margin-bottom: 0.5rem;">Team Name</label>
+                    <input type="text" placeholder="Enter your team name" style="width: 100%; padding: 0.8rem; border-radius: 8px; background: rgba(255, 255, 255, 0.1); border: 1px solid rgba(255, 255, 255, 0.2); color: white;">
+                </div>
+                <div style="margin-bottom: 1rem; text-align: left;">
+                    <label style="display: block; margin-bottom: 0.5rem;">Email</label>
+                    <input type="email" placeholder="Enter your email" style="width: 100%; padding: 0.8rem; border-radius: 8px; background: rgba(255, 255, 255, 0.1); border: 1px solid rgba(255, 255, 255, 0.2); color: white;">
+                </div>
+                <div style="margin-bottom: 1rem; text-align: left;">
+                    <label style="display: block; margin-bottom: 0.5rem;">Number of Team Members</label>
+                    <select style="width: 100%; padding: 0.8rem; border-radius: 8px; background: rgba(255, 255, 255, 0.1); border: 1px solid rgba(255, 255, 255, 0.2); color: white;">
+                        <option value="1">1 (Individual)</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                    </select>
+                </div>
+                <button type="submit" style="background: linear-gradient(135deg, #6366f1, #8b5cf6, #d946ef); color: white; padding: 1rem 2rem; border-radius: 50px; border: none; cursor: pointer; font-weight: 600; width: 100%; margin-top: 1rem;">Submit Registration</button>
+            `;
+            
+            modalContent.appendChild(closeBtn);
+            modalContent.appendChild(title);
+            modalContent.appendChild(form);
+            modal.appendChild(modalContent);
+            document.body.appendChild(modal);
+            
+            closeBtn.addEventListener('click', function() {
+                document.body.removeChild(modal);
+            });
+            
+            form.addEventListener('submit', function(e) {
+                e.preventDefault();
+                modalContent.innerHTML = `
+                    <h2 style="color: #d946ef; margin-bottom: 1.5rem;">Registration Successful!</h2>
+                    <p style="margin-bottom: 1.5rem;">Thank you for registering for the Competition & Challenges event. We've sent a confirmation email with further details.</p>
+                    <p style="margin-bottom: 1.5rem;">Registration fee: ₹150</p>
+                    <p style="margin-bottom: 1.5rem;">Payment instructions have been sent to your email.</p>
+                    <button id="closeModalBtn" style="background: linear-gradient(135deg, #6366f1, #8b5cf6, #d946ef); color: white; padding: 1rem 2rem; border-radius: 50px; border: none; cursor: pointer; font-weight: 600;">Close</button>
+                `;
+                
+                document.getElementById('closeModalBtn').addEventListener('click', function() {
+                    document.body.removeChild(modal);
+                });
+            });
+        });
+    </script>
 </body>
 </html>
