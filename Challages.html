@@ -862,9 +862,6 @@
             function animate() {
                 ctx.clearRect(0, 0, canvas.width, canvas.height);
                 
-                for (let i =   {
-                ctx.clearRect(0, 0, canvas.width, canvas.height);
-                
                 for (let i = 0; i < particles.length; i++) {
                     particles[i].update();
                     particles[i].draw();
@@ -904,26 +901,34 @@
         });
 
         // Countdown Timer
-        function updateCountdown() {
-            // Set the target date (April 8, 2025)
-            const targetDate = new Date('April 8, 2025 00:00:00').getTime();
-            const currentDate = new Date().getTime();
+function updateCountdown() {
+            const targetDate = new Date();
+            targetDate.setDate(targetDate.getDate() + 30); // 30 days from now
+
+            const currentDate = new Date();
             const difference = targetDate - currentDate;
-            
+
+            if (difference <= 0) {
+                document.getElementById('days').innerText = '00';
+                document.getElementById('hours').innerText = '00';
+                document.getElementById('minutes').innerText = '00';
+                document.getElementById('seconds').innerText = '00';
+                return;
+            }
+
             const days = Math.floor(difference / (1000 * 60 * 60 * 24));
             const hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
             const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
             const seconds = Math.floor((difference % (1000 * 60)) / 1000);
-            
-            document.getElementById('days').innerText = days.toString().padStart(2, '0');
-            document.getElementById('hours').innerText = hours.toString().padStart(2, '0');
-            document.getElementById('minutes').innerText = minutes.toString().padStart(2, '0');
-            document.getElementById('seconds').innerText = seconds.toString().padStart(2, '0');
+
+            document.getElementById('days').innerText = String(days).padStart(2, '0');
+            document.getElementById('hours').innerText = String(hours).padStart(2, '0');
+            document.getElementById('minutes').innerText = String(minutes).padStart(2, '0');
+            document.getElementById('seconds').innerText = String(seconds).padStart(2, '0');
         }
-        
-        // Update countdown every second
+
         setInterval(updateCountdown, 1000);
-        updateCountdown();
+        updateCountdown(); // Initial call
 
         // Registration button
         document.getElementById('registerBtn').addEventListener('click', function() {
