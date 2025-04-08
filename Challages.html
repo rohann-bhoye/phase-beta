@@ -519,6 +519,37 @@
             }
         }
 
+        @media (max-width: 480px) {
+            .countdown {
+                gap: 10px;
+            }
+            
+            .countdown-item {
+                min-width: 70px;
+                padding: 0.8rem;
+            }
+            
+            .countdown-number {
+                font-size: 1.5rem;
+            }
+            
+            .countdown-label {
+                font-size: 0.7rem;
+            }
+            
+            .card {
+                padding: 1.5rem;
+            }
+            
+            .event-title {
+                font-size: 1.8rem;
+            }
+            
+            h2 {
+                font-size: 1.5rem;
+            }
+        }
+
         .glow {
             position: absolute;
             width: 300px;
@@ -900,35 +931,39 @@
             });
         });
 
-        // Countdown Timer
-function updateCountdown() {
-            const targetDate = new Date();
-            targetDate.setDate(targetDate.getDate() + 30); // 30 days from now
-
+        // Countdown Timer - Updated to count 30 days from today
+        function updateCountdown() {
+            // Get current date
             const currentDate = new Date();
-            const difference = targetDate - currentDate;
-
-            if (difference <= 0) {
-                document.getElementById('days').innerText = '00';
-                document.getElementById('hours').innerText = '00';
-                document.getElementById('minutes').innerText = '00';
-                document.getElementById('seconds').innerText = '00';
-                return;
-            }
-
+            
+            // Calculate target date (30 days from now)
+            const targetDate = new Date();
+            targetDate.setDate(currentDate.getDate() + 30);
+            
+            // Get time difference in milliseconds
+            const difference = targetDate.getTime() - currentDate.getTime();
+            
+            // Calculate days, hours, minutes, seconds
             const days = Math.floor(difference / (1000 * 60 * 60 * 24));
             const hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
             const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
             const seconds = Math.floor((difference % (1000 * 60)) / 1000);
-
-            document.getElementById('days').innerText = String(days).padStart(2, '0');
-            document.getElementById('hours').innerText = String(hours).padStart(2, '0');
-            document.getElementById('minutes').innerText = String(minutes).padStart(2, '0');
-            document.getElementById('seconds').innerText = String(seconds).padStart(2, '0');
+            
+            // Update the DOM elements
+            document.getElementById('days').innerText = days.toString().padStart(2, '0');
+            document.getElementById('hours').innerText = hours.toString().padStart(2, '0');
+            document.getElementById('minutes').innerText = minutes.toString().padStart(2, '0');
+            document.getElementById('seconds').innerText = seconds.toString().padStart(2, '0');
+            
+            // Display target date in console for verification
+            console.log("Countdown to: " + targetDate.toLocaleString());
         }
-
+        
+        // Update countdown every second
         setInterval(updateCountdown, 1000);
-        updateCountdown(); // Initial call
+        
+        // Initial call to set values immediately
+        updateCountdown();
 
         // Registration button
         document.getElementById('registerBtn').addEventListener('click', function() {
@@ -936,86 +971,4 @@ function updateCountdown() {
             modal.style.position = 'fixed';
             modal.style.top = '0';
             modal.style.left = '0';
-            modal.style.width = '100%';
-            modal.style.height = '100%';
-            modal.style.backgroundColor = 'rgba(0, 0, 0, 0.8)';
-            modal.style.display = 'flex';
-            modal.style.alignItems = 'center';
-            modal.style.justifyContent = 'center';
-            modal.style.zIndex = '1000';
-            
-            const modalContent = document.createElement('div');
-            modalContent.style.backgroundColor = '#1a1a1a';
-            modalContent.style.padding = '2rem';
-            modalContent.style.borderRadius = '15px';
-            modalContent.style.maxWidth = '500px';
-            modalContent.style.width = '90%';
-            modalContent.style.textAlign = 'center';
-            modalContent.style.position = 'relative';
-            modalContent.style.border = '1px solid rgba(255, 255, 255, 0.1)';
-            
-            const closeBtn = document.createElement('button');
-            closeBtn.innerHTML = '&times;';
-            closeBtn.style.position = 'absolute';
-            closeBtn.style.top = '10px';
-            closeBtn.style.right = '15px';
-            closeBtn.style.background = 'none';
-            closeBtn.style.border = 'none';
-            closeBtn.style.color = 'white';
-            closeBtn.style.fontSize = '1.5rem';
-            closeBtn.style.cursor = 'pointer';
-            
-            const title = document.createElement('h2');
-            title.innerText = 'Register for Competition & Challenges';
-            title.style.marginBottom = '1.5rem';
-            title.style.color = '#d946ef';
-            
-            const form = document.createElement('form');
-            form.innerHTML = `
-                <div style="margin-bottom: 1rem; text-align: left;">
-                    <label style="display: block; margin-bottom: 0.5rem;">Team Name</label>
-                    <input type="text" placeholder="Enter your team name" style="width: 100%; padding: 0.8rem; border-radius: 8px; background: rgba(255, 255, 255, 0.1); border: 1px solid rgba(255, 255, 255, 0.2); color: white;">
-                </div>
-                <div style="margin-bottom: 1rem; text-align: left;">
-                    <label style="display: block; margin-bottom: 0.5rem;">Email</label>
-                    <input type="email" placeholder="Enter your email" style="width: 100%; padding: 0.8rem; border-radius: 8px; background: rgba(255, 255, 255, 0.1); border: 1px solid rgba(255, 255, 255, 0.2); color: white;">
-                </div>
-                <div style="margin-bottom: 1rem; text-align: left;">
-                    <label style="display: block; margin-bottom: 0.5rem;">Number of Team Members</label>
-                    <select style="width: 100%; padding: 0.8rem; border-radius: 8px; background: rgba(255, 255, 255, 0.1); border: 1px solid rgba(255, 255, 255, 0.2); color: white;">
-                        <option value="1">1 (Individual)</option>
-                        <option value="2">2</option>
-                        <option value="3">3</option>
-                    </select>
-                </div>
-                <button type="submit" style="background: linear-gradient(135deg, #6366f1, #8b5cf6, #d946ef); color: white; padding: 1rem 2rem; border-radius: 50px; border: none; cursor: pointer; font-weight: 600; width: 100%; margin-top: 1rem;">Submit Registration</button>
-            `;
-            
-            modalContent.appendChild(closeBtn);
-            modalContent.appendChild(title);
-            modalContent.appendChild(form);
-            modal.appendChild(modalContent);
-            document.body.appendChild(modal);
-            
-            closeBtn.addEventListener('click', function() {
-                document.body.removeChild(modal);
-            });
-            
-            form.addEventListener('submit', function(e) {
-                e.preventDefault();
-                modalContent.innerHTML = `
-                    <h2 style="color: #d946ef; margin-bottom: 1.5rem;">Registration Successful!</h2>
-                    <p style="margin-bottom: 1.5rem;">Thank you for registering for the Competition & Challenges event. We've sent a confirmation email with further details.</p>
-                    <p style="margin-bottom: 1.5rem;">Registration fee: ₹150</p>
-                    <p style="margin-bottom: 1.5rem;">Payment instructions have been sent to your email.</p>
-                    <button id="closeModalBtn" style="background: linear-gradient(135deg, #6366f1, #8b5cf6, #d946ef); color: white; padding: 1rem 2rem; border-radius: 50px; border: none; cursor: pointer; font-weight: 600;">Close</button>
-                `;
-                
-                document.getElementById('closeModalBtn').addEventListener('click', function() {
-                    document.body.removeChild(modal);
-                });
-            });
-        });
-    </script>
-</body>
-</html>
+            modal.style.
