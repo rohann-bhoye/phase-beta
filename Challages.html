@@ -862,6 +862,9 @@
             function animate() {
                 ctx.clearRect(0, 0, canvas.width, canvas.height);
                 
+                for (let i =   {
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+                
                 for (let i = 0; i < particles.length; i++) {
                     particles[i].update();
                     particles[i].draw();
@@ -902,11 +905,9 @@
 
         // Countdown Timer
         function updateCountdown() {
-            // Set the target date (30 days from now for demo purposes)
-            const targetDate = new Date();
-            targetDate.setDate(targetDate.getDate() + 30);
-            
-            const currentDate = new Date();
+            // Set the target date (April 8, 2025)
+            const targetDate = new Date('April 8, 2025 00:00:00').getTime();
+            const currentDate = new Date().getTime();
             const difference = targetDate - currentDate;
             
             const days = Math.floor(difference / (1000 * 60 * 60 * 24));
